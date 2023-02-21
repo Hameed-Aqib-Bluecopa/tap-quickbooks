@@ -426,6 +426,7 @@ class DeletedObjects(Stream):
                             self.is_deleted_object_found = True
                             rec['Type'] = entity
                             self.max_date = max(self.max_date, rec.get('MetaData').get('LastUpdatedTime'))
+                            rec['LastUpdatedTime'] = rec.get('MetaData').get('LastUpdatedTime')
                             yield rec
 
 
